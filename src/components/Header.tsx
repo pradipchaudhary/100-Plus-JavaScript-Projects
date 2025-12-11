@@ -7,83 +7,101 @@ import { Star, Github } from "lucide-react";
 
 const Header: React.FC = () => {
   return (
-    <header className="sticky top-0 z-50 border-b border-white/10 bg-neutral-950/60 backdrop-blur">
-      <div className="mx-auto max-w-7xl py-2 px-4 sm:px-6 lg:px-8">
+    <header
+      className="
+        sticky top-0 z-50 
+        backdrop-blur-sm border-b border-zinc-800 border-dashed
+      "
+    >
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-2">
         <div className="flex h-16 items-center justify-between">
 
           {/* LEFT: Logo + Navigation */}
           <div className="flex items-center gap-8">
 
             {/* Logo */}
-            <Link href="/" className="flex items-center">
+            <Link
+              href="/"
+              className="
+                flex items-center gap-3 pr-6 
+                border-r border-white/30 
+                hover:opacity-90 transition
+              "
+              aria-label="Go to homepage"
+            >
               <Image
-                src="/100PlusJS.png"
-                alt="Pradip Chaudhary Logo"
-                width={170}
-                height={60}
-                className="rounded-md"
+                src="/100PlusJS_logo.png"
+                alt="100PlusJS Logo"
+                width={78}
+                height={50}
                 priority
+                className="object-contain"
               />
+              <span className="text-lg font-semibold tracking-wide text-highlight">
+                JavaScript
+              </span>
             </Link>
 
             {/* Navigation */}
-            <nav className="hidden md:flex items-center gap-7">
-              <Link
-                href="#projects"
-                className="text-sm text-neutral-300 hover:text-white transition"
-              >
+            <nav className="hidden md:flex items-center gap-7" aria-label="Primary navigation">
+              <Link href="/" className="nav-link">
+                Home
+              </Link>
+              <Link href="#projects" className="nav-link">
                 Projects
               </Link>
-
               <a
                 href="https://github.com/pradipchaudhary/100-Plus-JavaScript-Projects"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-sm text-neutral-300 hover:text-white transition"
+                className="nav-link"
               >
                 Repository
               </a>
-
-              <Link
-                href="#about"
-                className="text-sm text-neutral-300 hover:text-white transition"
-              >
-                About
-              </Link>
-
-              <Link
-                href="#contact"
-                className="text-sm text-neutral-300 hover:text-white transition"
-              >
-                Contact
-              </Link>
             </nav>
           </div>
 
           {/* RIGHT: GitHub Buttons */}
           <div className="flex items-center gap-3">
 
-            {/* Star Count Button (external) */}
+            {/* Star Count Display */}
             <a
               href="https://github.com/pradipchaudhary/100-Plus-JavaScript-Projects"
               target="_blank"
               rel="noopener noreferrer"
-              aria-label="GitHub Stars"
-              className="group inline-flex items-center gap-2 rounded-md border border-white/10 bg-white/5 px-3 py-2 text-sm font-medium text-white hover:bg-white/10 transition"
+              aria-label="View GitHub star count"
+              className="
+                group inline-flex items-center gap-2 
+                rounded-md 
+                border border-white/10 
+                bg-white/5 
+                px-3 py-2 text-sm font-medium 
+                text-white 
+                hover:bg-white/10 transition
+              "
             >
-              <Star className="h-4 w-4 text-amber-400" />
-              <span id="starCount" className="tabular-nums text-neutral-200">
+              <Star className="h-4 w-4 text-highlight group-hover:scale-110 transition" />
+              <span id="starCount" className="tabular-nums text-neutral-300">
                 —
               </span>
             </a>
 
-            {/* Star Repo Button (external) */}
+            {/* Star Repo Button */}
             <a
               href="https://github.com/pradipchaudhary/100-Plus-JavaScript-Projects"
               target="_blank"
               rel="noopener noreferrer"
-              aria-label="Star Repository on GitHub"
-              className="inline-flex items-center gap-2 rounded-md border border-indigo-500/30 bg-indigo-500/10 px-3 py-2 text-sm font-medium text-indigo-300 hover:bg-indigo-500/20 hover:text-indigo-200 transition"
+              aria-label="Star this repository"
+              className="
+                inline-flex items-center gap-2 
+                rounded-md 
+                border border-highlight/40 
+                bg-highlight/10 
+                px-3 py-2 text-sm font-medium 
+                text-highlight
+                hover:bg-highlight/20 
+                transition
+              "
             >
               <Github className="h-4 w-4" />
               <span>Star Repo</span>

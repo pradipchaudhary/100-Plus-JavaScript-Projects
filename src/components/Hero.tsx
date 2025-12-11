@@ -1,115 +1,74 @@
 "use client";
 
-import { ArrowRight, Code2, Sparkles } from "lucide-react";
+import React from "react";
+import Link from "next/link";
+import { ArrowRight } from "lucide-react";
 
 const Hero = () => {
   return (
-    <section className="relative min-h-screen flex items-center justify-center 
-      bg-gradient-to-b from-[#1a1a1a] to-[#111111] overflow-hidden">
+    <section className="relative min-h-[90vh] flex items-center overflow-hidden">
 
       {/* Background grid */}
-      <div className="absolute inset-0 bg-grid opacity-20" />
+      <div className="absolute inset-0 bg-grid opacity-[0.18]" />
 
-      {/* Floating code elements */}
-      <div className="absolute top-1/4 left-10 md:left-20 animate-float opacity-30">
-        <pre className="font-mono text-xs text-neutral-300">
-          {`const learn = () => {
-  return "JavaScript";
-};`}
-        </pre>
-      </div>
+      {/* Glow circles */}
+      <div className="absolute top-20 left-10 w-72 h-72 rounded-full bg-highlight/10 blur-3xl"></div>
+      <div className="absolute bottom-10 right-10 w-64 h-64 rounded-full bg-highlight/5 blur-2xl"></div>
 
-      <div
-        className="absolute bottom-1/4 right-10 md:right-20 animate-float opacity-30"
-        style={{ animationDelay: "2s" }}
-      >
-        <pre className="font-mono text-xs text-neutral-300">
-          {`function build() {
-  console.log("🚀");
-}`}
-        </pre>
-      </div>
+      <div className="relative z-10 max-w-7xl mx-auto px-6 py-24 flex flex-col items-center text-center">
 
-      {/* Glow orbs */}
-      <div className="absolute top-1/3 left-1/4 w-96 h-96 bg-indigo-500/10 rounded-full blur-3xl" />
-      <div className="absolute bottom-1/3 right-1/4 w-80 h-80 bg-emerald-500/10 rounded-full blur-3xl" />
-
-      <div className="container mx-auto px-6 relative z-10">
-        <div className="max-w-4xl mx-auto text-center">
-
-          {/* Badge */}
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full 
-            bg-white/5 border border-white/10 mb-8 animate-fade-in">
-            <Sparkles className="w-4 h-4 text-indigo-300" />
-            <span className="text-sm text-neutral-400">
-              Open Source Learning Resource
-            </span>
-          </div>
-
-          {/* Main Heading */}
-          <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 animate-slide-up">
-            <span className="text-neutral-100">Master JavaScript with</span>
-            <br />
-            <span className="bg-gradient-to-r from-indigo-400 to-emerald-400 
-              bg-clip-text text-transparent">
-              100+ Real Projects
-            </span>
-          </h1>
-
-          {/* Subtitle */}
-          <p
-            className="text-lg md:text-xl text-neutral-400 max-w-2xl mx-auto mb-10 animate-slide-up"
-            style={{ animationDelay: "0.2s" }}
-          >
-            A curated collection of practical JavaScript projects to sharpen your
-            skills from beginner to advanced levels.
-          </p>
-
-          {/* CTA Buttons (commented if needed) */}
-          <div
-            className="flex flex-col sm:flex-row items-center justify-center gap-4 animate-slide-up"
-            style={{ animationDelay: "0.4s" }}
-          >
-            {/* Buttons can be re-enabled if needed */}
-          </div>
-
-          {/* Stats Row */}
-          <div
-            className="flex items-center justify-center gap-8 md:gap-12 mt-16 animate-fade-in"
-            style={{ animationDelay: "0.6s" }}
-          >
-            <div className="text-center">
-              <div className="text-3xl md:text-4xl font-bold 
-                bg-gradient-to-r from-neutral-200 to-neutral-300 bg-clip-text text-transparent">
-                100+
-              </div>
-              <div className="text-sm text-neutral-500 mt-1">Projects</div>
-            </div>
-
-            <div className="w-px h-12 bg-white/10" />
-
-            <div className="text-center">
-              <div className="text-3xl md:text-4xl font-bold text-neutral-100">
-                246
-              </div>
-              <div className="text-sm text-neutral-500 mt-1">Stars</div>
-            </div>
-
-            <div className="w-px h-12 bg-white/10" />
-
-            <div className="text-center">
-              <div className="text-3xl md:text-4xl font-bold text-neutral-100">
-                65
-              </div>
-              <div className="text-sm text-neutral-500 mt-1">Forks</div>
-            </div>
-          </div>
+        {/* Badge */}
+        <div className="inline-flex items-center gap-2 px-4 py-1 rounded-full border border-highlight/40 bg-highlight/10 text-highlight text-sm tracking-wide mb-6">
+          <span className="block w-2 h-2 rounded-full bg-highlight animate-pulse"></span>
+          100+ JavaScript Projects
         </div>
-      </div>
 
-      {/* Bottom fade */}
-      <div className="absolute bottom-0 left-0 right-0 h-32 
-        bg-gradient-to-t from-black/40 to-transparent" />
+        {/* Title */}
+        <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight text-white max-w-4xl">
+          Build Real-World
+          <span className="text-highlight"> JavaScript Projects </span>
+          and Master Modern Web Development
+
+        </h1>
+
+        {/* Subtitle */}
+        <p className="mt-6 text-lg text-neutral-300 max-w-2xl">
+          Level up your JavaScript skills with beginner to advanced hands-on projects.
+          Clean code, real use-cases, interactive examples, and open-source GitHub repository.
+        </p>
+
+        {/* Buttons */}
+        <div className="mt-10 flex flex-col sm:flex-row gap-4">
+
+          <Link
+            href="#projects"
+            className="
+              inline-flex items-center justify-center gap-2
+              px-6 py-3 rounded-md text-black font-semibold
+              bg-highlight hover:bg-highlight/80 
+              transition shadow-lg shadow-highlight/20
+            "
+          >
+            View All Projects
+            <ArrowRight className="w-4 h-4" />
+          </Link>
+
+          <a
+            href="https://github.com/pradipchaudhary/100-Plus-JavaScript-Projects"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="
+              inline-flex items-center justify-center gap-2
+              px-6 py-3 rounded-md border border-white/20 
+              text-white font-medium hover:bg-white/10
+              transition
+            "
+          >
+            GitHub Repository
+          </a>
+        </div>
+
+      </div>
     </section>
   );
 };
